@@ -12,7 +12,19 @@ include_directories(include)
 include_directories(headers)
 link_directories(lib)
 
-set(SOURCE_FILES)
+set(SOURCE_FILES headers/Exception.hpp
+                 headers/init.h
+                 headers/Logger.h
+                 headers/RenderableObject.h
+                 headers/SimpleShaderCompiler.h
+                 headers/InputHandler.h
+                 headers/Component.h
+                 
+                 src/Logger.cpp
+                 src/RenderableObject.cpp
+                 src/SimpleShaderCompiler.cpp
+                 src/InputHandler.cpp
+                 )
 
-add_executable(ScanLine main.cpp glad.c)
+add_executable(ScanLine main.cpp glad.c ${SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME} glfw3)
