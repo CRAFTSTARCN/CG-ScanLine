@@ -19,11 +19,22 @@ set(SOURCE_FILES headers/Exception.hpp
                  headers/SimpleShaderCompiler.h
                  headers/InputHandler.h
                  headers/Component.h
+                 headers/Window.h
+                 headers/ScanLineAlgo.h
+                 headers/RepeatedPixel.h
+                 headers/GlobalStat.h
+                 headers/GizmosLine.h
                  
                  src/Logger.cpp
                  src/RenderableObject.cpp
                  src/SimpleShaderCompiler.cpp
                  src/InputHandler.cpp
+                 src/Component.cpp
+                 src/Window.cpp
+                 src/ScanLineAlgo.cpp
+                 src/RepeatedPixel.cpp
+                 src/GlobalStat.cpp
+                 src/GizmosLine.cpp
                  )
 
 add_executable(ScanLine main.cpp glad.c ${SOURCE_FILES})

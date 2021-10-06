@@ -56,4 +56,13 @@ class IOException : public Throwable {
     }
 };
 
+class InputException : public Throwable {
+    public:
+    explicit InputException(const std::string& compileMsg) : Throwable(compileMsg) {}
+
+    std::string type() const {
+        return "INPUTEXCEPTION";
+    }
+};
+
 #endif

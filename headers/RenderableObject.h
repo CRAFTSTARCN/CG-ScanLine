@@ -4,9 +4,12 @@
 #include "glad/glad.h"
 #include "glm/glm.hpp"
 
+#include "GlobalStat.h"
+
 #include <functional>
 #include <vector>
 #include <map>
+#include <string>
 
 class Component;
 
@@ -17,12 +20,15 @@ protected:
     GLenum drawType, rendType;
     int shaderProgram;
     std::map<std::string, Component*> components;
+    GlobalStat* bindedStat;
 
 public:
 
     glm::vec3 translate;
     glm::vec3 rotate;
     glm::vec3 scale;
+
+    glm::mat4 transfromMatrix;
 
     RenderableObject(GLenum drawT, GLenum rendT, int shader);
     ~RenderableObject();
@@ -42,11 +48,21 @@ public:
 
     void setComponent(Component* comp);
 
+    void bindStat(GlobalStat* stat);
+
     void bindData();
 
-    void processComponents();
+    virtual void processComponents();
+
+    virtual void Start();
+
+    virtual void doTransform(const glm::mat4& project);
+
+    virtual void rendering();
 
     virtual void renderPipline(const glm::mat4& project);
+
+    GlobalStat* getGlobStat();
 };
 
 #endif

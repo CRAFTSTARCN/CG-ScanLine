@@ -9,7 +9,7 @@ class Component {
     
     protected:
     RenderableObject* attachedObject;
-    bool activeStatis;
+    bool activeStatus;
 
     public:
     Component();
@@ -21,14 +21,14 @@ class Component {
     virtual void onActivate();
     virtual void onDeactivate();
 
-    void Activate();
-    void Deactivate();
+    void activate();
+    void deactivate();
 
     bool isActive() const;
 
-    void Update();
+    virtual void update();
 
-    virtual std::string ComponentType() const = 0;
+    virtual std::string componentType() const = 0;
 };
 
 #endif

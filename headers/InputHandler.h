@@ -27,11 +27,16 @@ class InputHandler {
     static double scrollOffsetX;
     static double scrollOffsetY;
 
+    static uint32_t keyStat[];
+    static int unitCount;
+
     static void scrollCallback(GLFWwindow *window, double xoffset, double yoffset);
 
     static void cursorPositionCallback(GLFWwindow* window, double x, double y);
 
     static void mouseDownCallBack(GLFWwindow* window, int button, int action, int mods);
+
+    static void keyCallBack(GLFWwindow* window, int key, int scancode, int action, int mod);
 
     public:
     static void init(GLFWwindow* window);
